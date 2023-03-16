@@ -30,7 +30,7 @@ Bellow you can find the schematic of the circuit.
 #define PASSWORD "PASSWORD"
 ```
 
-2. Create a file called `your-environment.env` in the backend folder and add your environment variables like so:
+2. Create a file called `dev.env` and `prod.env` in the backend folder and add your environment variables like so:
 
 ```env
 PORT=3000
