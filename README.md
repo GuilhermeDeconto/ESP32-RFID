@@ -23,9 +23,20 @@ Bellow you can find the schematic of the circuit.
 
 ## Essentials
 
-Create a file called WiFiCredentials.h in the root folder and add your wifi credentials like so:
+1. Create a file called WiFiCredentials.h in the root folder and add your wifi credentials like so:
 
 ```c++
 #define SSID "SSID"
 #define PASSWORD "PASSWORD"
+```
+
+2. Create a file called `your-environment.env` in the backend folder and add your environment variables like so:
+
+```env
+PORT=3000
+DB_HOST=db
+DB_PORT=5432
+DB_USERNAME=postgres
+DB_PASSWORD=postgres
+DB_DATABASE=postgres
 ```
