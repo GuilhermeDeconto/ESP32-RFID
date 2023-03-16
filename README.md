@@ -9,7 +9,7 @@ For this system to work there are a few important components:
 - ESP32: The ESP32 is a microcontroller which is able to read the UID of the card and send it to the server.
 - Backend: The backend is a NestJS server which is able to receive the UID and check if the user is allowed to do something. This backend is connected to a relational database PostgreSQL using TypeORM as ORM.
 
-## Deploy
+### Deploy
 
 During the process of creating a software application, it's common to write code within a development environment. However, at some point, it becomes necessary to launch the application in a production environment while still carrying out the development process within the development environment. For this reason, it's important to be able to manage environment variables in a way that allows us to easily switch between environments. In this project, we use the the NestJS-Config module.
 
