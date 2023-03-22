@@ -15,6 +15,7 @@
 #define RST_PIN 0
 #define LED_BLUE 16
 #define LED_RED 17
+#define BUZZER_PIN 25
 
 using namespace std;
 
@@ -48,6 +49,7 @@ void setup() {
 
     pinMode(LED_BLUE, OUTPUT);
     pinMode(LED_RED, OUTPUT);
+    pinMode(BUZZER_PIN, OUTPUT);
 
     Serial.print("Reader :");
     rfid.PCD_DumpVersionToSerial();
@@ -90,11 +92,24 @@ void checkRFIDCode(vector<int> currentRFID) {
 void letUserIn(bool isAuthorized) {
     if (isAuthorized) {
         digitalWrite(LED_BLUE, HIGH);
+        digitalWrite(BUZZER_PIN, HIGH);
         delay(2000);
         digitalWrite(LED_BLUE, LOW);
+        digitalWrite(BUZZER_PIN, LOW);
     } else {
         digitalWrite(LED_RED, HIGH);
-        delay(2000);
+        digitalWrite(BUZZER_PIN, HIGH);
+        delay(500);
+        digitalWrite(BUZZER_PIN, LOW);
+        delay(500);
+        digitalWrite(BUZZER_PIN, HIGH);
+        delay(500);
+        digitalWrite(BUZZER_PIN, LOW);
+        delay(500);
+        digitalWrite(BUZZER_PIN, HIGH);
+        delay(500);
+        digitalWrite(BUZZER_PIN, LOW);
+        delay(500);
         digitalWrite(LED_RED, LOW);
     }
 }
